@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .product {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-name {
+      flex: 1;
+    }
+    .price {
+      width: 80px;
+      text-align: right;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .controls button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #007BFF;
+      color: #fff;
+      font-size: 16px;
+    }
+    .controls span {
+      min-width: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .total {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Product Calculator</h1>
+  
+  <div class="product" data-price="20">
+    <div class="product-name">Shirts</div>
+    <div class="price">$20</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+  
+  <div class="product" data-price="25">
+    <div class="product-name">Shorts</div>
+    <div class="price">$25</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+  
+  <div class="product" data-price="40">
+    <div class="product-name">Pants</div>
+    <div class="price">$40</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+  
+  <div class="product" data-price="30">
+    <div class="product-name">Gym Top</div>
+    <div class="price">$30</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+  
+  <div class="product" data-price="35">
+    <div class="product-name">Gym Bottom</div>
+    <div class="price">$35</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+  
+  <div class="total">Total: $0</div>
+  
+  <script>
+    const products = document.querySelectorAll('.product');
+    const totalDisplay = document.querySelector('.total');
+    
+    products.forEach(product => {
+      const price = parseInt(product.getAttribute('data-price'));
+      const minusBtn = product.querySelector('.minus');
+      const plusBtn = product.querySelector('.plus');
+      const quantityDisplay = product.querySelector('.quantity');
+      
+      let quantity = 0;
+      
+      plusBtn.addEventListener('click', () => {
+        quantity++;
+        quantityDisplay.textContent = quantity;
+        updateTotal();
+      });
+      
+      minusBtn.addEventListener('click', () => {
+        if (quantity > 0) {
+          quantity--;
+          quantityDisplay.textContent = quantity;
+          updateTotal();
+        }
+      });
+    });
+    
+    function updateTotal() {
+      let total = 0;
+      products.forEach(product => {
+        const price = parseInt(product.getAttribute('data-price'));
+        const quantity = parseInt(product.querySelector('.quantity').textContent);
+        total += price * quantity;
+      });
+      totalDisplay.textContent = "Total: $" + total;
+    }
+  </script>
+</body>
+</html>
