@@ -266,14 +266,14 @@
       let quantity = 0;
       
       plusBtn.addEventListener('click', () => {
-        quantity++;
+        quantity = parseInt(product.querySelector('.quantity').textContent) + 1;
         quantityDisplay.textContent = quantity;
         updateTotal();
       });
       
       minusBtn.addEventListener('click', () => {
         if (quantity > 0) {
-          quantity--;
+          quantity = parseInt(product.querySelector('.quantity').textContent) - 1;
           quantityDisplay.textContent = quantity;
           updateTotal();
         }
