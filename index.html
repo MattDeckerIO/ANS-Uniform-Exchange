@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Calculator</title>
+  <title>ANS Uniform Exchange Calculator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -28,8 +28,8 @@
       flex: 1;
     }
     .price {
-      width: 80px;
       text-align: right;
+      margin-right: 1rem;
     }
     .controls {
       display: flex;
@@ -59,11 +59,12 @@
   </style>
 </head>
 <body>
-  <h1>Product Calculator</h1>
-  
-  <div class="product" data-price="20">
-    <div class="product-name">Shirts</div>
-    <div class="price">$20</div>
+  <h1>ANS Uniform Exchange Calculator</h1>
+
+  <!-- Product: Shorts/Skorts Price: $7 -->
+  <div class="product" data-price="7">
+    <div class="product-name">Shorts/Skorts</div>
+    <div class="price">$7</div>
     <div class="controls">
       <button class="minus">-</button>
       <span class="quantity">0</span>
@@ -71,39 +72,147 @@
     </div>
   </div>
   
-  <div class="product" data-price="25">
-    <div class="product-name">Shorts</div>
-    <div class="price">$25</div>
+  <!-- Product: Junior High Skirts Price: $10 -->
+  <div class="product" data-price="10">
+    <div class="product-name">Junior High Skirts</div>
+    <div class="price">$10</div>
     <div class="controls">
       <button class="minus">-</button>
       <span class="quantity">0</span>
       <button class="plus">+</button>
     </div>
   </div>
-  
-  <div class="product" data-price="40">
+
+  <!-- Product: Pants Price: $5 -->
+  <div class="product" data-price="5">
     <div class="product-name">Pants</div>
-    <div class="price">$40</div>
+    <div class="price">$5</div>
     <div class="controls">
       <button class="minus">-</button>
       <span class="quantity">0</span>
       <button class="plus">+</button>
     </div>
   </div>
-  
-  <div class="product" data-price="30">
-    <div class="product-name">Gym Top</div>
-    <div class="price">$30</div>
+
+  <!-- Product: Jumpers Price: $5 -->
+  <div class="product" data-price="5">
+    <div class="product-name">Jumpers</div>
+    <div class="price">$5</div>
     <div class="controls">
       <button class="minus">-</button>
       <span class="quantity">0</span>
       <button class="plus">+</button>
     </div>
   </div>
-  
-  <div class="product" data-price="35">
-    <div class="product-name">Gym Bottom</div>
-    <div class="price">$35</div>
+
+  <!-- Product: Polo Shirts Price: $5 -->
+  <div class="product" data-price="5">
+    <div class="product-name">Polo Shirts</div>
+    <div class="price">$5</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+
+  <!-- Product: Sweaters Price: $4 -->
+  <div class="product" data-price="4">
+    <div class="product-name">Sweaters</div>
+    <div class="price">$4</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+
+  <!-- Product: Gym Shorts Price: $3 -->
+  <div class="product" data-price="3">
+    <div class="product-name">Gym Shorts</div>
+    <div class="price">$3</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+
+  <!-- Product: Gym T-Shirts Price: $3 -->
+  <div class="product" data-price="3">
+    <div class="product-name">Gym T-Shirts</div>
+    <div class="price">$3</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+  <!-- Product: Sweatshirts Price: $4 -->
+  <div class="product" data-price="4">
+    <div class="product-name">Sweatshirts</div>
+    <div class="price">$4</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+  <!-- Product: Sweatpants Price: $4 -->
+  <div class="product" data-price="4">
+    <div class="product-name">Sweatpants</div>
+    <div class="price">$4</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+  <!-- Product: Hairbands Price: $2 -->
+  <div class="product" data-price="2">
+    <div class="product-name">Hairbands</div>
+    <div class="price">$2</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+
+  <!-- Product: Socks Price: $1 -->
+  <div class="product" data-price="1">
+    <div class="product-name">Socks</div>
+    <div class="price">$1</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+  <!-- Product: Tights Price: $2 -->
+  <div class="product" data-price="2">
+    <div class="product-name">Tights</div>
+    <div class="price">$2</div>
+    <div class="controls">
+      <button class="minus">-</button>
+      <span class="quantity">0</span>
+      <button class="plus">+</button>
+    </div>
+  </div>
+
+
+  <!-- Product: Belts Price: $2 -->
+  <div class="product" data-price="2">
+    <div class="product-name">Belts</div>
+    <div class="price">$2</div>
     <div class="controls">
       <button class="minus">-</button>
       <span class="quantity">0</span>
