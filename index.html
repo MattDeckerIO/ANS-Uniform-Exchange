@@ -5,10 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ANS Uniform Exchange Calculator</title>
   <style>
+
+    /* Sticky header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #d6d6dd;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .header .reset-btn {
+      position: absolute;
+      right: 20px;
+      background: #ff4444;
+      border: none;
+      color: white;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: #f4f4f9;
-      padding: 20px;
+      padding: 0;
+      margin: 0;
     }
     h1 {
       text-align: center;
@@ -20,7 +49,7 @@
       align-items: center;
       background: #fff;
       padding: 15px;
-      margin: 10px 0;
+      margin: 10px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
@@ -51,15 +80,20 @@
       font-weight: bold;
     }
     .total {
-      margin-top: 20px;
-      font-size: 20px;
       font-weight: bold;
       text-align: center;
     }
   </style>
 </head>
 <body>
+
   <h1>ANS Uniform Exchange Calculator</h1>
+
+  <!-- Sticky header -->
+  <div class="header">
+    <span class="total">Total: $0</span>
+    <button class="reset-btn">RESET</button>
+  </div>
 
   <!-- Product: Shorts/Skorts Price: $7 -->
   <div class="product" data-price="7">
@@ -220,12 +254,11 @@
     </div>
   </div>
   
-  <div class="total">Total: $0</div>
-  
   <script>
     const products = document.querySelectorAll('.product');
     const totalDisplay = document.querySelector('.total');
-    
+    const resetBtn = document.querySelector('.reset-btn');
+
     products.forEach(product => {
       const price = parseInt(product.getAttribute('data-price'));
       const minusBtn = product.querySelector('.minus');
@@ -258,6 +291,15 @@
       });
       totalDisplay.textContent = "Total: $" + total;
     }
+
+    // Reset button
+    resetBtn.addEventListener('click', () => {
+      products.forEach(product => {
+        const quantityDisplay = product.querySelector('.quantity');
+        quantityDisplay.textContent = 0;
+      });
+      updateTotal();
+    });
   </script>
 </body>
 </html>
